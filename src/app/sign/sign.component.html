@@ -1,0 +1,30 @@
+
+<div class="row">
+        <div class="container">
+        <div *ngIf="a">Now Login With Sign Up Id</div>
+          <div *ngIf="errMess" class="alert alert-danger">
+            <strong>ERROR</strong>{{errMess}}
+          </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="form-control">
+              <label>Email</label>
+              <input name="Email" formControlName="Email" >
+              <br>
+              <small *ngIf="!form.get('Email').valid&&form.get('Email').touched">Enter correct email </small>
+              <br>
+              <label>Password</label>
+              <input type="password" name="Password" formControlName="Password">
+              <br>
+              <small class="danger" *ngIf="!form.get('Password').valid&&form.get('Password').touched">Enter Correct Password</small>
+              <br>
+              <button type="submit" class="btn btn-primary">
+              {{signMode1}}</button><p>Click Here for
+              <a (click)="toChange()">{{signMode}} </a></p>
+            </div>
+            </form>
+      
+        </div>
+      </div>
+      
+      
+      <!-- (click)="onSignUp(e.value,p.value)" -->
