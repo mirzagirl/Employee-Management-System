@@ -1,1 +1,1 @@
-const 
+const greet = 'Hello';
